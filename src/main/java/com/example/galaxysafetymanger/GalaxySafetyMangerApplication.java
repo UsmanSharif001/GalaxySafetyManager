@@ -10,4 +10,6 @@ public class GalaxySafetyMangerApplication {
         SpringApplication.run(GalaxySafetyMangerApplication.class, args);
     }
 
+    //Comment
+
 }
