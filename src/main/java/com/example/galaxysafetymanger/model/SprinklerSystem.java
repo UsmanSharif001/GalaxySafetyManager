@@ -1,5 +1,6 @@
 package com.example.galaxysafetymanger.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -11,18 +12,42 @@ import java.time.LocalDate;
 public class SprinklerSystem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JsonProperty("ssorid")
     private int ssorid;
+
+    @JsonProperty("date")
     private LocalDate date;
+
+    @JsonProperty("pressureOverDryValve")
     private double pressureOverDryValve;
+
+    @JsonProperty("pressureOverWeatValve")
     private double pressureOverWeatValve;
+
+    @JsonProperty("pressureUnderValves")
     private double pressureUnderValves;
+
+    @JsonProperty("pressureOnWaterPlug")
     private double pressureOnWaterPlug;
+
+    @JsonProperty("electricPumpStarting")
     private boolean isElectricPumpStarting;
+
+    @JsonProperty("alarmToFireDepartmentWorking")
     private boolean isAlarmToFireDepartmentWorking;
+
+    @JsonProperty("waterStandReservoir")
     private double waterStandReservoir;
+
+    @JsonProperty("comments")
     private String comments;
+
+    @JsonProperty("signature")
     private String signature;
 
+    public SprinklerSystem() {
+
+    }
 
     public int getSsorid() {
         return ssorid;
