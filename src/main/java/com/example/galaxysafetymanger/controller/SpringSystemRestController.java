@@ -18,7 +18,7 @@ public class SpringSystemRestController {
 
 
     @GetMapping("/ssor")
-    public ResponseEntity<List<SprinklerSystem>> getSSOR() {
+    public ResponseEntity<List<SprinklerSystem>> getssor() {
         List<SprinklerSystem> ssor = sprinklerSystemRepository.findAll();
         return ResponseEntity.ok(ssor);
     }
@@ -26,7 +26,7 @@ public class SpringSystemRestController {
     @PostMapping("/ssor")
     @ResponseStatus(HttpStatus.CREATED)
     public SprinklerSystem postSSOR (@RequestBody SprinklerSystem ssor) {
-        System.out.println("gotten SSOR" + ssor);
+        System.out.println("gotten ssor" + ssor);
         SprinklerSystem savedssor = sprinklerSystemRepository.save(ssor);
         System.out.println("saved ssor using JPA");
         return savedssor;
