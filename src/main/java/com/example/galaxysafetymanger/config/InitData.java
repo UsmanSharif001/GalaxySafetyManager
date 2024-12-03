@@ -1,18 +1,24 @@
 package com.example.galaxysafetymanger.config;
 
+import com.example.galaxysafetymanger.model.OperationRecord;
 import com.example.galaxysafetymanger.model.SprinklerSystem;
+import com.example.galaxysafetymanger.repository.OperationRecordRepository;
 import com.example.galaxysafetymanger.repository.SprinklerSystemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Component
 public class InitData implements CommandLineRunner {
 
     @Autowired
     SprinklerSystemRepository sprinklerSystemRepository;
+
+    @Autowired
+    OperationRecordRepository operationRecordRepository;
 
     @Override
     public void run(String... args) throws Exception {
@@ -48,6 +54,21 @@ public class InitData implements CommandLineRunner {
         sprinkler2.setSignature("Jane Smith");
         sprinklerSystemRepository.save(sprinkler2);
 
+        OperationRecord operationRecord1 = new OperationRecord();
+        operationRecord1.setOrName("Jens Hansen");
+        operationRecord1.setOrAddress("Galaksen adresse");
+        operationRecord1.setOrPhoneNumber(90909090);
+        operationRecord1.setEscapeRouteClear(true);
+        operationRecord1.setEscapeRouteClear2(true);
+        operationRecord1.setEmergencyDoorsVisible(true);
+        operationRecord1.setEmergencyLightsWork(true);
+        operationRecord1.setWarningSystemWork(true);
+        operationRecord1.setMaxCapasitiesIsVisible(true);
+        operationRecord1.setInventoryComplieswithFloor(true);
+        operationRecord1.setFireExtinguisherIsCorrect(true);
+        operationRecord1.setDateTime(LocalDate.now());
+        operationRecord1.setSignature("Underskrevet Jens Hansen");
+        operationRecordRepository.save(operationRecord1);
 
     }
 }
