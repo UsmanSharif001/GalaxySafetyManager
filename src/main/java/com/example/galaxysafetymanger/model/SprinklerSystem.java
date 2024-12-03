@@ -13,13 +13,13 @@ public class SprinklerSystem {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int ssorid;
     private LocalDate date;
-    private int pressureOverDryValve;
-    private int pressureOverWeatValve;
-    private int pressureUnderValves;
-    private int pressureOnWaterPlug;
+    private double pressureOverDryValve;
+    private double pressureOverWeatValve;
+    private double pressureUnderValves;
+    private double pressureOnWaterPlug;
     private boolean isElectricPumpStarting;
     private boolean isAlarmToFireDepartmentWorking;
-    private int waterStandReservoir;
+    private double waterStandReservoir;
     private String comments;
     private String signature;
 
@@ -40,35 +40,35 @@ public class SprinklerSystem {
         this.date = date;
     }
 
-    public int getPressureOverDryValve() {
+    public double getPressureOverDryValve() {
         return pressureOverDryValve;
     }
 
-    public void setPressureOverDryValve(int pressureOverDryValve) {
+    public void setPressureOverDryValve(double pressureOverDryValve) {
         this.pressureOverDryValve = pressureOverDryValve;
     }
 
-    public int getPressureOverWeatValve() {
+    public double getPressureOverWeatValve() {
         return pressureOverWeatValve;
     }
 
-    public void setPressureOverWeatValve(int pressureOverWeatValve) {
+    public void setPressureOverWeatValve(double pressureOverWeatValve) {
         this.pressureOverWeatValve = pressureOverWeatValve;
     }
 
-    public int getPressureUnderValves() {
+    public double getPressureUnderValves() {
         return pressureUnderValves;
     }
 
-    public void setPressureUnderValves(int pressureUnderValves) {
+    public void setPressureUnderValves(double pressureUnderValves) {
         this.pressureUnderValves = pressureUnderValves;
     }
 
-    public int getPressureOnWaterPlug() {
+    public double getPressureOnWaterPlug() {
         return pressureOnWaterPlug;
     }
 
-    public void setPressureOnWaterPlug(int pressureOnWaterPlug) {
+    public void setPressureOnWaterPlug(double pressureOnWaterPlug) {
         this.pressureOnWaterPlug = pressureOnWaterPlug;
     }
 
@@ -88,11 +88,11 @@ public class SprinklerSystem {
         isAlarmToFireDepartmentWorking = alarmToFireDepartmentWorking;
     }
 
-    public int getWaterStandReservoir() {
+    public double getWaterStandReservoir() {
         return waterStandReservoir;
     }
 
-    public void setWaterStandReservoir(int waterStandReservoir) {
+    public void setWaterStandReservoir(double waterStandReservoir) {
         this.waterStandReservoir = waterStandReservoir;
     }
 
