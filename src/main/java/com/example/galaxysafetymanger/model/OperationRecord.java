@@ -16,7 +16,7 @@ public class OperationRecord {
     private int orId;
     private String orName;
     private String orAddress;
-    private int orPhoneNumber;
+    private String orPhoneNumber;
     private boolean isEscapeRouteClear;
     private boolean isEscapeRouteClear2;
     private boolean isEmergencyDoorsVisible;
@@ -25,6 +25,9 @@ public class OperationRecord {
     private boolean maxCapasitiesIsVisible;
     private boolean inventoryComplieswithFloor;
     private boolean fireExtinguisherIsCorrect;
+    private boolean employeeInstruction;
+    private boolean evacuationPlanForEmployee;
+    private String errorDescription;
     private LocalDate dateTime;
     private String signature;
 
@@ -52,11 +55,11 @@ public class OperationRecord {
         this.orAddress = orAddress;
     }
 
-    public int getOrPhoneNumber() {
+    public String getOrPhoneNumber() {
         return orPhoneNumber;
     }
 
-    public void setOrPhoneNumber(int orPhoneNumber) {
+    public void setOrPhoneNumber(String orPhoneNumber) {
         this.orPhoneNumber = orPhoneNumber;
     }
 
@@ -122,6 +125,30 @@ public class OperationRecord {
 
     public void setFireExtinguisherIsCorrect(boolean fireExtinguisherIsCorrect) {
         this.fireExtinguisherIsCorrect = fireExtinguisherIsCorrect;
+    }
+
+    public boolean isEmployeeInstruction() {
+        return employeeInstruction;
+    }
+
+    public void setEmployeeInstruction(boolean employeeInstruction) {
+        this.employeeInstruction = employeeInstruction;
+    }
+
+    public boolean isEvacuationPlanForEmployee() {
+        return evacuationPlanForEmployee;
+    }
+
+    public void setEvacuationPlanForEmployee(boolean evacuationPlanForEmployee) {
+        this.evacuationPlanForEmployee = evacuationPlanForEmployee;
+    }
+
+    public String getErrorDescription() {
+        return errorDescription;
+    }
+
+    public void setErrorDescription(String errorDescription) {
+        this.errorDescription = errorDescription;
     }
 
     public LocalDate getDateTime() {
