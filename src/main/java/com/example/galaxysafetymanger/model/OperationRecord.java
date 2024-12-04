@@ -1,5 +1,6 @@
 package com.example.galaxysafetymanger.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -9,14 +10,15 @@ import org.springframework.core.SpringVersion;
 import java.time.LocalDate;
 
 @Entity
-public class OperationRecord {
+public class
+OperationRecord {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int orId;
     private String orName;
     private String orAddress;
-    private int orPhoneNumber;
+    private String orPhoneNumber;
     private boolean isEscapeRouteClear;
     private boolean isEscapeRouteClear2;
     private boolean isEmergencyDoorsVisible;
@@ -25,6 +27,7 @@ public class OperationRecord {
     private boolean maxCapasitiesIsVisible;
     private boolean inventoryComplieswithFloor;
     private boolean fireExtinguisherIsCorrect;
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate dateTime;
     private String signature;
 
@@ -52,11 +55,11 @@ public class OperationRecord {
         this.orAddress = orAddress;
     }
 
-    public int getOrPhoneNumber() {
+    public String getOrPhoneNumber() {
         return orPhoneNumber;
     }
 
-    public void setOrPhoneNumber(int orPhoneNumber) {
+    public void setOrPhoneNumber(String orPhoneNumber) {
         this.orPhoneNumber = orPhoneNumber;
     }
 
