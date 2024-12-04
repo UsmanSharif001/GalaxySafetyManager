@@ -21,8 +21,8 @@ public class SprinklerSystem {
     @JsonProperty("pressureOverDryValve")
     private double pressureOverDryValve;
 
-    @JsonProperty("pressureOverWeatValve")
-    private double pressureOverWeatValve;
+    @JsonProperty("pressureOverWetValve")
+    private double pressureOverWetValve;
 
     @JsonProperty("pressureUnderValves")
     private double pressureUnderValves;
@@ -30,14 +30,9 @@ public class SprinklerSystem {
     @JsonProperty("pressureOnWaterPlug")
     private double pressureOnWaterPlug;
 
-    @JsonProperty("electricPumpStarting")
-    private boolean isElectricPumpStarting;
 
     @JsonProperty("alarmToFireDepartmentWorking")
     private boolean isAlarmToFireDepartmentWorking;
-
-    @JsonProperty("waterStandReservoir")
-    private double waterStandReservoir;
 
     @JsonProperty("comments")
     private String comments;
@@ -73,12 +68,12 @@ public class SprinklerSystem {
         this.pressureOverDryValve = pressureOverDryValve;
     }
 
-    public double getPressureOverWeatValve() {
-        return pressureOverWeatValve;
+    public double getPressureOverWetValve() {
+        return pressureOverWetValve;
     }
 
-    public void setPressureOverWeatValve(double pressureOverWeatValve) {
-        this.pressureOverWeatValve = pressureOverWeatValve;
+    public void setPressureOverWetValve(double pressureOverWeatValve) {
+        this.pressureOverWetValve = pressureOverWeatValve;
     }
 
     public double getPressureUnderValves() {
@@ -97,13 +92,6 @@ public class SprinklerSystem {
         this.pressureOnWaterPlug = pressureOnWaterPlug;
     }
 
-    public boolean isElectricPumpStarting() {
-        return isElectricPumpStarting;
-    }
-
-    public void setElectricPumpStarting(boolean electricPumpStarting) {
-        isElectricPumpStarting = electricPumpStarting;
-    }
 
     public boolean isAlarmToFireDepartmentWorking() {
         return isAlarmToFireDepartmentWorking;
@@ -111,14 +99,6 @@ public class SprinklerSystem {
 
     public void setAlarmToFireDepartmentWorking(boolean alarmToFireDepartmentWorking) {
         isAlarmToFireDepartmentWorking = alarmToFireDepartmentWorking;
-    }
-
-    public double getWaterStandReservoir() {
-        return waterStandReservoir;
-    }
-
-    public void setWaterStandReservoir(double waterStandReservoir) {
-        this.waterStandReservoir = waterStandReservoir;
     }
 
     public String getComments() {
