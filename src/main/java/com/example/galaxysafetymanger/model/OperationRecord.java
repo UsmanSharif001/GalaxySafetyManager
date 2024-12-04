@@ -1,6 +1,5 @@
 package com.example.galaxysafetymanger.model;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -10,8 +9,7 @@ import org.springframework.core.SpringVersion;
 import java.time.LocalDate;
 
 @Entity
-public class
-OperationRecord {
+public class OperationRecord {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,7 +25,9 @@ OperationRecord {
     private boolean maxCapasitiesIsVisible;
     private boolean inventoryComplieswithFloor;
     private boolean fireExtinguisherIsCorrect;
-    @JsonFormat(pattern = "yyyy-MM-dd")
+    private boolean employeeInstruction;
+    private boolean evacuationPlanForEmployee;
+    private String errorDescription;
     private LocalDate dateTime;
     private String signature;
 
@@ -125,6 +125,30 @@ OperationRecord {
 
     public void setFireExtinguisherIsCorrect(boolean fireExtinguisherIsCorrect) {
         this.fireExtinguisherIsCorrect = fireExtinguisherIsCorrect;
+    }
+
+    public boolean isEmployeeInstruction() {
+        return employeeInstruction;
+    }
+
+    public void setEmployeeInstruction(boolean employeeInstruction) {
+        this.employeeInstruction = employeeInstruction;
+    }
+
+    public boolean isEvacuationPlanForEmployee() {
+        return evacuationPlanForEmployee;
+    }
+
+    public void setEvacuationPlanForEmployee(boolean evacuationPlanForEmployee) {
+        this.evacuationPlanForEmployee = evacuationPlanForEmployee;
+    }
+
+    public String getErrorDescription() {
+        return errorDescription;
+    }
+
+    public void setErrorDescription(String errorDescription) {
+        this.errorDescription = errorDescription;
     }
 
     public LocalDate getDateTime() {
