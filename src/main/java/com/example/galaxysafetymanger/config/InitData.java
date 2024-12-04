@@ -57,7 +57,7 @@ public class InitData implements CommandLineRunner {
         OperationRecord operationRecord1 = new OperationRecord();
         operationRecord1.setOrName("Jens Hansen");
         operationRecord1.setOrAddress("Galaksen adresse");
-        operationRecord1.setOrPhoneNumber(90909090);
+        operationRecord1.setOrPhoneNumber("90909090");
         operationRecord1.setEscapeRouteClear(true);
         operationRecord1.setEscapeRouteClear2(true);
         operationRecord1.setEmergencyDoorsVisible(true);
@@ -66,6 +66,8 @@ public class InitData implements CommandLineRunner {
         operationRecord1.setMaxCapasitiesIsVisible(true);
         operationRecord1.setInventoryComplieswithFloor(true);
         operationRecord1.setFireExtinguisherIsCorrect(true);
+        operationRecord1.setEmployeeInstruction(true);
+        operationRecord1.setEvacuationPlanForEmployee(true);
         operationRecord1.setDateTime(LocalDate.now());
         operationRecord1.setSignature("Underskrevet Jens Hansen");
         operationRecordRepository.save(operationRecord1);
