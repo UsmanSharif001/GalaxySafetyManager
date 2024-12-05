@@ -22,6 +22,8 @@ public class OperationRecordRestController {
         List<OperationRecord> or = operationRecordRepository.findAll();
         return new ResponseEntity(or, HttpStatus.OK);
     }
+
+
     @PostMapping("/createOR")
     public ResponseEntity<OperationRecord> createOR(@RequestBody OperationRecord newOR) {
         System.out.println("Received OR: " + newOR);
