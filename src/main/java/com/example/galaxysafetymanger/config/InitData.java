@@ -50,9 +50,6 @@ public class InitData implements CommandLineRunner {
         sprinklerSystemRepository.save(sprinkler2);
 
         OperationRecord operationRecord1 = new OperationRecord();
-        operationRecord1.setOrName("Jens Hansen");
-        operationRecord1.setOrAddress("Galaksen adresse");
-        operationRecord1.setOrPhoneNumber("90909090");
         operationRecord1.setEscapeRouteClear(true);
         operationRecord1.setEscapeRouteClear2(true);
         operationRecord1.setEmergencyDoorsVisible(true);

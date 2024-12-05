@@ -13,9 +13,6 @@ public class OperationRecord {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int orId;
-    private String orName;
-    private String orAddress;
-    private String orPhoneNumber;
     private boolean escapeRouteClear;
     private boolean escapeRouteClear2;
     private boolean emergencyDoorsVisible;
@@ -119,13 +116,7 @@ public class OperationRecord {
         this.maxCapasitiesIsVisible = maxCapasitiesIsVisible;
     }
 
-    public String getOrAddress() {
-        return orAddress;
-    }
 
-    public void setOrAddress(String orAddress) {
-        this.orAddress = orAddress;
-    }
 
     public int getOrId() {
         return orId;
@@ -135,21 +126,6 @@ public class OperationRecord {
         this.orId = orId;
     }
 
-    public String getOrName() {
-        return orName;
-    }
-
-    public void setOrName(String orName) {
-        this.orName = orName;
-    }
-
-    public String getOrPhoneNumber() {
-        return orPhoneNumber;
-    }
-
-    public void setOrPhoneNumber(String orPhoneNumber) {
-        this.orPhoneNumber = orPhoneNumber;
-    }
 
     public String getSignature() {
         return signature;
@@ -171,9 +147,6 @@ public class OperationRecord {
     public String toString() {
         return "OperationRecord{" +
                 ", orId=" + orId +
-                ", orName='" + orName + '\'' +
-                ", orAddress='" + orAddress + '\'' +
-                ", orPhoneNumber='" + orPhoneNumber + '\'' +
                 ", escapeRouteClear=" + escapeRouteClear +
                 ", escapeRouteClear2=" + escapeRouteClear2 +
                 ", emergencyDoorsVisible=" + emergencyDoorsVisible +
