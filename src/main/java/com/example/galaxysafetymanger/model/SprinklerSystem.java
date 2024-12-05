@@ -43,7 +43,6 @@ public class SprinklerSystem {
     public SprinklerSystem() {
 
     }
-
     public int getSsorid() {
         return ssorid;
     }
