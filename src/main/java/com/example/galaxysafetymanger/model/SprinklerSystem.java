@@ -43,7 +43,6 @@ public class SprinklerSystem {
     public SprinklerSystem() {
 
     }
-
     public int getSsorid() {
         return ssorid;
     }
@@ -67,7 +66,6 @@ public class SprinklerSystem {
     public void setPressureOverDryValve(double pressureOverDryValve) {
         this.pressureOverDryValve = pressureOverDryValve;
     }
-
     public double getPressureOverWetValve() {
         return pressureOverWetValve;
     }
