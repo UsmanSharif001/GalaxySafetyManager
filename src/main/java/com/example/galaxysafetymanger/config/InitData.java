@@ -35,7 +35,7 @@ public class InitData implements CommandLineRunner {
         sprinkler1.setPressureOnWaterPlug(70);
         sprinkler1.setAlarmToFireDepartmentWorking(true);
         sprinkler1.setComments("All systems are operational.");
-        sprinkler1.setSignature("John Doe");
+        sprinkler1.setSignature("ERL");
         sprinklerSystemRepository.save(sprinkler1);
 
         SprinklerSystem sprinkler2 = new SprinklerSystem();
@@ -46,7 +46,7 @@ public class InitData implements CommandLineRunner {
         sprinkler2.setPressureOnWaterPlug(65);
         sprinkler2.setAlarmToFireDepartmentWorking(false);
         sprinkler2.setComments("Electric pump failed to start, alarm system offline.");
-        sprinkler2.setSignature("Jane Smith");
+        sprinkler2.setSignature("JKS");
         sprinklerSystemRepository.save(sprinkler2);
 
         OperationRecord operationRecord1 = new OperationRecord();
@@ -61,7 +61,7 @@ public class InitData implements CommandLineRunner {
         operationRecord1.setEmployeeInstruction(true);
         operationRecord1.setEvacuationPlanForEmployee(true);
         operationRecord1.setDateTime(LocalDate.now());
-        operationRecord1.setSignature("Underskrevet Jens Hansen");
+        operationRecord1.setSignature("ZLY");
         operationRecordRepository.save(operationRecord1);
 
     }
