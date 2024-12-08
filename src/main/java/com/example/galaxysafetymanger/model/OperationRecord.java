@@ -1,5 +1,6 @@
 package com.example.galaxysafetymanger.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -24,6 +25,7 @@ public class OperationRecord {
     private boolean employeeInstruction;
     private boolean evacuationPlanForEmployee;
     private String errorDescription;
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate dateTime;
     private String signature;
 
