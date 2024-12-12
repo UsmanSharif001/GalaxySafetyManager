@@ -8,8 +8,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
-@CrossOrigin("*")
+@CrossOrigin(origins = "*")
 @RestController
 public class SpringSystemRestController {
 
@@ -31,6 +32,21 @@ public class SpringSystemRestController {
         System.out.println("saved ssor using JPA");
         return savedssor;
     }
+
+    @PutMapping("/ssor/{id}")
+    public ResponseEntity<SprinklerSystem> updateSSOR(@PathVariable int id, @RequestBody SprinklerSystem ssor) {
+        System.out.println("Incoming ID: " + id);
+        System.out.println("Incoming SSOR: " + ssor);
+        Optional<SprinklerSystem> ssorFound = sprinklerSystemRepository.findById(id);
+        if (ssorFound.isPresent()) {
+            ssor.setSsorid(id);
+            sprinklerSystemRepository.save(ssor);
+            return new ResponseEntity<>(ssor, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
 
 
 }
