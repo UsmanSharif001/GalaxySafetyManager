@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.swing.text.html.Option;
 import java.util.List;
 import java.util.Optional;
 
@@ -16,7 +17,6 @@ public class SpringSystemRestController {
 
     @Autowired
     SprinklerSystemRepository sprinklerSystemRepository;
-
 
     @GetMapping("/ssor")
     public ResponseEntity<List<SprinklerSystem>> getssor() {
@@ -47,6 +47,16 @@ public class SpringSystemRestController {
         }
     }
 
+    @DeleteMapping("/ssor/remove/{id}")
+    public ResponseEntity<SprinklerSystem> deleteSSOR(@PathVariable int id){
+        if (sprinklerSystemRepository.existsById(id)) {
+            sprinklerSystemRepository.deleteById(id);
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+
+    }
 
 
 }
