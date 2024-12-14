@@ -38,6 +38,19 @@ public class OperationRecordRestController {
         return new ResponseEntity<>(savedOR, HttpStatus.CREATED);
     }
 
+    @PutMapping("/updateOperationRecord/{id}")
+    public ResponseEntity<OperationRecord> updateOperationRecord(@PathVariable int id, @RequestBody OperationRecord updatedOR) {
+        Optional<OperationRecord> existingRecord = operationRecordRepository.findById(id);
+        if (existingRecord.isPresent()) {
+            updatedOR.setOrId(id);
+            OperationRecord savedRecord = operationRecordRepository.save(updatedOR);
+            return new ResponseEntity<>(savedRecord, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+
     @DeleteMapping("/deleteOperationRecord/{id}")
     public ResponseEntity<Void> deleteOperationRecord(@PathVariable int id) {
         if (operationRecordRepository.existsById(id)) {
