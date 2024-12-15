@@ -4,10 +4,12 @@ import com.example.galaxysafetymanger.model.OperationRecord;
 import com.example.galaxysafetymanger.model.SprinklerSystem;
 import com.example.galaxysafetymanger.repository.OperationRecordRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 
@@ -20,7 +22,7 @@ public class OperationRecordRestController {
 
     @GetMapping("/allOr")
     public ResponseEntity<List<OperationRecord>> getOr() {
-        List<OperationRecord> or = operationRecordRepository.findAll();
+        List<OperationRecord> or = operationRecordRepository.findAll(Sort.by(Sort.Direction.DESC, "dateTime"));
         return new ResponseEntity(or, HttpStatus.OK);
     }
 
